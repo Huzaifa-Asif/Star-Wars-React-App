@@ -1,24 +1,59 @@
-import logo from './logo.svg';
+import React,{ useState, useEffect } from 'react';
+import Navbar from './components/Navbar'
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+// import { Home } from './components/Home';
+import Home  from './components/Home.js'
+import People from './components/People.js';
+import Planet from './components/Planet.js';
 
 function App() {
+
+  const [people, setPeople] = useState([]);
+  const [planets, setPlanets] = useState([]);
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() =>{
+    async function fetchPeople(){
+      let res = await fetch('https://swapi.dev/api/people/?format=json');
+      let data = await res.json();
+      setPeople(data.results);
+    }
+
+    async function fetchPlanets(){
+      let res = await fetch('https://swapi.dev/api/planets/?format=json');
+      let data = await res.json();
+      setPlanets(data.results);
+    }
+
+    fetchPeople();
+    fetchPlanets();
+  }, [])
+
+  console.log("people ",people);
+  console.log("planets ",planets);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+       <Router>
+        <Navbar />
+        <Container>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route exact path='/planet'>
+              <Planet />
+            </Route>
+            <Route exact path='/people'>
+              <People />
+            </Route>
+          </Switch>
+        </Container>
+       </Router>
+    </>
   );
 }
 
