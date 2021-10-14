@@ -3,10 +3,11 @@ import Navbar from './components/Navbar'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
-// import { Home } from './components/Home';
 import Home  from './components/Home.js'
 import People from './components/People.js';
+import PeopleDetail from './components/PeopleDetail.js';
 import Planet from './components/Planet.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route exact path='/people'>
               <People data={people} />
+            </Route>
+            <Route path="/people-detail/:id">
+              <PeopleDetail />
             </Route>
           </Switch>
         )}
