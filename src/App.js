@@ -6,6 +6,7 @@ import { Container, Dimmer, Loader } from 'semantic-ui-react';
 import Home  from './components/Home.js'
 import People from './components/People.js';
 import PeopleDetail from './components/PeopleDetail.js';
+import PlanetDetail from './components/PlanetDetail.js';
 import Planet from './components/Planet.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/people-detail/:id">
               <PeopleDetail />
+            </Route>
+            <Route path="/planet-detail/:id">
+              <PlanetDetail />
             </Route>
           </Switch>
         )}

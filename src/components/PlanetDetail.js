@@ -9,18 +9,17 @@ import {
     useParams
 } from "react-router-dom";
 
-
-export default function PeopleDetail() {
+export default function PlanetDetail() {
     let { id } = useParams();
     // const [loading, setLoading] = useState(true)
-    const [peopleDetail, setPeopleDetail] = useState(undefined)
+    const [planetDetail, setPlanetDetail] = useState(undefined)
 
     useEffect(() => {
         async function fetchPeople() {
-            let res = await fetch(`https://swapi.dev/api/people/${id}?format=json`);
+            let res = await fetch(`https://swapi.dev/api/planets/${id}?format=json`);
             let data = await res.json();
-            setPeopleDetail(data);
-            console.log("peopleDetail ", peopleDetail)
+            setPlanetDetail(data);
+            console.log("planetDetail ", planetDetail)
             // setLoading(false);
         }
 
@@ -31,39 +30,39 @@ export default function PeopleDetail() {
 
         <div>
 
-        {peopleDetail ? (
+        {planetDetail ? (
             <container>
-            <h1>People Detail Page: {peopleDetail.name}</h1>
+            <h1>Planet Detail Page: {planetDetail.name}</h1>
             <div className="row mt-5">
                 <div className="col">
-                    <h4>Height: {peopleDetail.height}</h4>
+                    <h4>Climate: {planetDetail.climate}</h4>
                 </div>
                 <div className="col">
-                    <h4>Mass: {peopleDetail.mass}</h4>
+                    <h4>Diameter: {planetDetail.diameter}</h4>
                 </div>
                 <div className="col">
-                    <h4>Hair Color: {peopleDetail.hair_color}</h4>
+                    <h4>Gravity: {planetDetail.gravity}</h4>
                 </div>
                 <div className="col">
-                    <h4>Skin Color: {peopleDetail.skin_color}</h4>
+                    <h4>Obital Period: {planetDetail.orbital_period}</h4>
                 </div>
             </div>
 
             <div className="row mt-4">
                 <div className="col">
-                    <h4>Eye Color: {peopleDetail.eye_color}</h4>
+                    <h4>Population: {planetDetail.population}</h4>
                 </div>
                 <div className="col">
-                    <h4>Birth Year: {peopleDetail.birth_year}</h4>
+                    <h4>Rotation Period: {planetDetail.rotation_period}</h4>
                 </div>
                 <div className="col">
-                    <h4>Gender: {peopleDetail.gender}</h4>
+                    <h4>Surface Water: {planetDetail.surface_water}</h4>
                 </div>
                 <div className="col">
-                    <h4>Created Time: {peopleDetail.created.substring(0,10)}</h4>
+                    <h4>Created Time: {planetDetail.created.substring(0,10)}</h4>
                 </div>
                 {/* <div className="col">
-                    <h4>Created Time: {Moment(peopleDetail.created, Moment.defaultFormat).toDate()} </h4>                    
+                    <h4>Created Time: {Moment(planetDetail.created, Moment.defaultFormat).toDate()} </h4>                    
                 </div> */}
             </div>
 
@@ -75,14 +74,13 @@ export default function PeopleDetail() {
                     <th>Value</th>
                 </tr>
             </thead>
-                {peopleDetail.films.map((film,i) =>
+                {planetDetail.residents.map((resident,i) =>
                 <tr>
                     <td> 
                         {i+1}
                     </td>
                     <td>
-                        {/* {film} */}
-                        <a href={film} target="_blank">{film}</a>
+                        <a href={resident} target="_blank">{resident}</a>
                     </td>
                 </tr>
                 )}

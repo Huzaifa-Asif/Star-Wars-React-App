@@ -1,6 +1,13 @@
 import React from 'react'
 import { Card, Grid } from 'semantic-ui-react';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams
+  } from "react-router-dom";
+  
 export default function Planet({data}) {
     return (
         <>
@@ -9,6 +16,7 @@ export default function Planet({data}) {
             {data.map((people, i)=>{
                 return (
                     <Grid.Column key={i}>
+                        <Link to={`/people-detail/${i+1}`}>
                         <Card>
                             <Card.Content>
                                 <Card.Header>{people.name}</Card.Header>
@@ -22,6 +30,7 @@ export default function Planet({data}) {
                                 </Card.Description>
                             </Card.Content>
                         </Card>
+                        </Link>
                     </Grid.Column>
                 )
             })}
