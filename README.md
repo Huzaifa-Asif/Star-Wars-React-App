@@ -1,5 +1,6 @@
 # Star Wars React React App
 
+Project URL: [https://react-star-war-app.herokuapp.com/](https://react-star-war-app.herokuapp.com/)
 ## Available Scripts
 
 In the project directory, you can run:
