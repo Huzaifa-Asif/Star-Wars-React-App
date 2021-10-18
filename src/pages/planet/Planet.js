@@ -1,12 +1,6 @@
 import React from 'react'
 import { Card, Grid } from 'semantic-ui-react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
   
 export default function Planet({data}) {
     return (
