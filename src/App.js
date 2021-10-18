@@ -3,11 +3,11 @@ import Navbar from './components/Navbar'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
-import Home  from './components/Home.js'
-import People from './components/People.js';
-import PeopleDetail from './components/PeopleDetail.js';
-import PlanetDetail from './components/PlanetDetail.js';
-import Planet from './components/Planet.js';
+import Home  from './pages/home/Home.js'
+import People from './pages/people/People.js';
+import PeopleDetail from './pages/people/PeopleDetail.js';
+import PlanetDetail from './pages/planet/PlanetDetail.js';
+import Planet from './pages/planet/Planet.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
