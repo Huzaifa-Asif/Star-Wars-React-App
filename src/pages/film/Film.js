@@ -6,7 +6,7 @@ export default function Film({ data }) {
     return (
 
         <>
-            <header class="masthead mb-5">
+            <header class="masthead film-background mb-5">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">
@@ -18,7 +18,6 @@ export default function Film({ data }) {
 
             <div class="container">
                 <div class="row">
-                    {/* <Grid columns={3}> */}
                     {data.map((film, i) => {
                         return (
                             <div class="col-lg-4 col-md-4 col-sm-12 my-2">

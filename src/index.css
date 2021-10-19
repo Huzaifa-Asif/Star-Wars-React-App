@@ -15,8 +15,7 @@ code {
 .masthead {
   height: 100vh;
   min-height: 200px;
-  max-height: 250px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('https://wallpaperaccess.com/full/11808.jpg');
+  max-height: 350px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,4 +24,12 @@ code {
 .image-title {
   color: white;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.film-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('https://ultramookie.com/images/2020/rise-of-skywalker.jpg');
+}
+
+.people-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('https://wallpaperaccess.com/full/11808.jpg');
 }
