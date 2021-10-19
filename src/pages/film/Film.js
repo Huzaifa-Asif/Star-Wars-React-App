@@ -6,26 +6,26 @@ export default function Film({ data }) {
     return (
 
         <>
-            <header class="masthead film-background mb-5">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12 text-center">
-                            <h1 class="fw-light image-title">Start Wars Film List</h1>
+            <header className="masthead film-background mb-5">
+                <div className="container h-100">
+                    <div className="row h-100 align-items-center">
+                        <div className="col-12 text-center">
+                            <h1 className="fw-light image-title">Start Wars Film List</h1>
                         </div>
                     </div>
                 </div>
             </header>
 
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     {data.map((film, i) => {
                         return (
-                            <div class="col-lg-4 col-md-4 col-sm-12 my-2">
-                                <div class="card" key={i}>
+                            <div className="col-lg-4 col-md-4 col-sm-12 my-2">
+                                <div className="card" key={i}>
                                     <Link to={`/film-detail/${i + 1}`}>
-                                        <div class="card-body text-dark">
-                                            <h4 class="card-title">{film.title}</h4>
-                                            <p class="card-text">
+                                        <div className="card-body text-dark">
+                                            <h4 className="card-title">{film.title}</h4>
+                                            <p className="card-text">
 
                                                 <strong>Director</strong>
                                                 <p>{film.director}</p>
