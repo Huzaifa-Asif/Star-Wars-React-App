@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../../components/Slider';
+import homeImage from '../../images/swapi.jpg';
 
 export default function Home() {
     return (
@@ -19,7 +20,7 @@ export default function Home() {
                     </div>
 
                     <div className="col-lg-6 col-sm-12 mt-4">
-                        <img src="https://www.mycode.website/wp-content/uploads/2017/11/sc1.png" className="w-100"></img>
+                        <img src={homeImage} className="w-100"></img>
                     </div>
 
                 </div>

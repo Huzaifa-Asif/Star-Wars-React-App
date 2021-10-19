@@ -10,7 +10,7 @@ export default function Film({ data }) {
                 <div className="container h-100">
                     <div className="row h-100 align-items-center">
                         <div className="col-12 text-center">
-                            <h1 className="fw-light image-title">Start Wars Film List</h1>
+                            <h1 className="fw-light image-title">Star Wars Film List</h1>
                         </div>
                     </div>
                 </div>
