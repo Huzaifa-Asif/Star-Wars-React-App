@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function People({data}) {
+export default function People({ data }) {
 
     return (
         <>
-              <header class="masthead people-background mb-5">
+            <header class="masthead people-background mb-5">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">
