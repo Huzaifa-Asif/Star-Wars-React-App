@@ -1,24 +1,42 @@
 import React from 'react'
-import { Menu, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
+
     return (
-        <Menu inverted>
-            <Container>
-                <Link to='/'>
-                    <Menu.Item name="Home"></Menu.Item>
-                </Link>
-                <Link to='/people'>
-                    <Menu.Item name="People"></Menu.Item>
-                </Link>
-                <Link to='/planet'>
-                    <Menu.Item name="Planets"></Menu.Item>
-                </Link>
-                <Link to='/film'>
-                    <Menu.Item name="Films"></Menu.Item>
-                </Link>
-            </Container>
-        </Menu>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <Link class="navbar-brand" to='/'>
+                Star Wars
+            </Link>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <Link class="nav-link" exact activeClassName="active" to='/' >
+                            Home
+                        </Link>
+                    </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" activeClassName="active" to='/people'>
+                            People
+                        </Link>
+                    </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" activeClassName="active" to='/planet'>
+                            Planets
+                        </Link>
+                    </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" activeClassName="active" to='/film'>
+                            Films
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     )
 }
