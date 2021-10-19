@@ -29,34 +29,34 @@ export default function PeopleDetail() {
                     </Dimmer>
                 ) : (
                     <container>
-                        <h1>People Detail Page: {peopleDetail.name}</h1>
+                        <h1 className="mt-5">People Detail Page: {peopleDetail.name}</h1>
                         <div className="row mt-5">
                             <div className="col">
-                                <h4>Height: {peopleDetail.height}</h4>
+                                <p><b>Height:</b> {peopleDetail.height}</p>
                             </div>
                             <div className="col">
-                                <h4>Mass: {peopleDetail.mass}</h4>
+                                <p><b>Mass:</b> {peopleDetail.mass}</p>
                             </div>
                             <div className="col">
-                                <h4>Hair Color: {peopleDetail.hair_color}</h4>
+                                <p><b>Hair Color:</b> {peopleDetail.hair_color}</p>
                             </div>
                             <div className="col">
-                                <h4>Skin Color: {peopleDetail.skin_color}</h4>
+                                <p><b>Skin Color:</b> {peopleDetail.skin_color}</p>
                             </div>
                         </div>
 
                         <div className="row mt-4">
                             <div className="col">
-                                <h4>Eye Color: {peopleDetail.eye_color}</h4>
+                                <p><b>Eye Color:</b> {peopleDetail.eye_color}</p>
                             </div>
                             <div className="col">
-                                <h4>Birth Year: {peopleDetail.birth_year}</h4>
+                                <p><b>Birth Year:</b> {peopleDetail.birth_year}</p>
                             </div>
                             <div className="col">
-                                <h4>Gender: {peopleDetail.gender}</h4>
+                                <p><b>Gender:</b> {peopleDetail.gender}</p>
                             </div>
                             <div className="col">
-                                <h4>Created Time: {peopleDetail.created.substring(0, 10)}</h4>
+                                <p><b>Created Time:</b> {peopleDetail.created.substring(0, 10)}</p>
                             </div>
                         </div>
 

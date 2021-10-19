@@ -30,22 +30,22 @@ export default function FilmDetail() {
 
                 ) : (
                     <container>
-                        <h1>Film Detail Page: {filmDetail.title}</h1>
+                        <h1 className="mt-5">Film Detail Page: {filmDetail.title}</h1>
                         <div className="row mt-5">
                             <div className="col">
-                                <h4>Director: {filmDetail.director}</h4>
+                                <p><b>Director:</b> {filmDetail.director}</p>
                             </div>
                             <div className="col">
-                                <h4>Producer: {filmDetail.producer}</h4>
+                                <p><b>Producer:</b> {filmDetail.producer}</p>
                             </div>
                             <div className="col">
-                                <h4>Created Time: {filmDetail.created.substring(0, 10)}</h4>
+                                <p><b>Created Time:</b> {filmDetail.created.substring(0, 10)}</p>
                             </div>
                         </div>
 
                         <div className="row mt-4">
                             <div className="col">
-                                <h4>Opening Crawl: {filmDetail.opening_crawl}</h4>
+                                <p><b>Opening Crawl:</b> {filmDetail.opening_crawl}</p>
                             </div>
                         </div>
 

@@ -30,34 +30,34 @@ export default function PlanetDetail() {
 
                 ) : (
                     <container>
-                        <h1>Planet Detail Page: {planetDetail.name}</h1>
+                        <h1 className="mt-5">Planet Detail Page: {planetDetail.name}</h1>
                         <div className="row mt-5">
                             <div className="col">
-                                <h4>Climate: {planetDetail.climate}</h4>
+                                <p><b>Climate:</b> {planetDetail.climate}</p>
                             </div>
                             <div className="col">
-                                <h4>Diameter: {planetDetail.diameter}</h4>
+                                <p><b>Diameter:</b> {planetDetail.diameter}</p>
                             </div>
                             <div className="col">
-                                <h4>Gravity: {planetDetail.gravity}</h4>
+                                <p><b>Gravity:</b> {planetDetail.gravity}</p>
                             </div>
                             <div className="col">
-                                <h4>Obital Period: {planetDetail.orbital_period}</h4>
+                                <p><b>Obital Period:</b> {planetDetail.orbital_period}</p>
                             </div>
                         </div>
 
                         <div className="row mt-4">
                             <div className="col">
-                                <h4>Population: {planetDetail.population}</h4>
+                                <p><b> Population:</b> {planetDetail.population}</p>
                             </div>
                             <div className="col">
-                                <h4>Rotation Period: {planetDetail.rotation_period}</h4>
+                                <p><b> Rotation Period:</b> {planetDetail.rotation_period}</p>
                             </div>
                             <div className="col">
-                                <h4>Surface Water: {planetDetail.surface_water}</h4>
+                                <p><b> Surface Water:</b> {planetDetail.surface_water}</p>
                             </div>
                             <div className="col">
-                                <h4>Created Time: {planetDetail.created.substring(0, 10)}</h4>
+                                <p><b> Created Time:</b> {planetDetail.created.substring(0, 10)}</p>
                             </div>
                         </div>
 
