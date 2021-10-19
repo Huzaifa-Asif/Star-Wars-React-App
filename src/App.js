@@ -47,16 +47,11 @@ function App() {
    
   }, [])
 
-  console.log("people ",people);
-  console.log("planets ",planets);
-  console.log("films ",films);
-  
 
   return (
     <>
        <Router>
         <Navbar />
-        <Container>
           {loading ? (
             <Dimmer active inverted>
               <Loader inverted>Loading</Loader>
@@ -86,7 +81,6 @@ function App() {
             </Route>
           </Switch>
         )}
-        </Container>
        </Router>
     </>
   );
