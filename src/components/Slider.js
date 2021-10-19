@@ -16,19 +16,19 @@ export default function Slider() {
                 <div className="carousel-inner">
                     <div className="carousel-item active slider-css carousel-1">
                         <div className="carousel-caption">
-                            <h3>Star Wars Film List</h3>
+                            <h1>Star Wars Film List</h1>
                             <Link className="btn btn-lg btn-primary mb-5" to="/film">View Details</Link>
                         </div>
                     </div>
                     <div className="carousel-item slider-css carousel-2">
                         <div className="carousel-caption">
-                            <h3>Star Wars People List</h3>
+                            <h1>Star Wars People List</h1>
                             <Link className="btn btn-lg btn-primary mb-5" to="/people">View Details</Link>
                         </div>
                     </div>
                     <div className="carousel-item slider-css carousel-3">
                         <div className="carousel-caption">
-                            <h3>Star Wars Planet List</h3>
+                            <h1>Star Wars Planet List</h1>
                             <Link className="btn btn-lg btn-primary mb-5" to="/planet">View Details</Link>
                         </div>
                     </div>
