@@ -16,22 +16,22 @@ export default function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" exact activeClassName="active" to='/' >
+                        <Link className="nav-link" exact activeclassname="active" to='/' >
                             Home
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" activeClassName="active" to='/people'>
+                        <Link className="nav-link" activeclassname="active" to='/people'>
                             People
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" activeClassName="active" to='/planet'>
+                        <Link className="nav-link" activeclassname="active" to='/planet'>
                             Planets
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" activeClassName="active" to='/film'>
+                        <Link className="nav-link" activeclassname="active" to='/film'>
                             Films
                         </Link>
                     </li>
