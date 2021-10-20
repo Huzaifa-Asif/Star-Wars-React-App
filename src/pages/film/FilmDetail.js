@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'
 import { useParams } from "react-router-dom";
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
+import { fetchFilmDetails } from '../../services/RestApi';
 
 export default function FilmDetail() {
     let { id } = useParams();
@@ -9,14 +10,12 @@ export default function FilmDetail() {
     const [filmDetail, setFilmDetail] = useState(undefined)
 
     useEffect(() => {
-        async function fetchPeople() {
-            let res = await fetch(`https://swapi.dev/api/films/${id}?format=json`);
-            let data = await res.json();
-            setFilmDetail(data);
+        async function fetchData() {
+            const filmDetailResult = await fetchFilmDetails(id);
+            setFilmDetail(filmDetailResult);
             setLoading(false);
         }
-
-        fetchPeople();
+        fetchData();
     }, []);
 
     return (

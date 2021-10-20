@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'
 import { useParams } from "react-router-dom";
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
+import { fetchPlanetDetails } from '../../services/RestApi';
 
 export default function PlanetDetail() {
     let { id } = useParams();
@@ -9,14 +10,12 @@ export default function PlanetDetail() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        async function fetchPeople() {
-            let res = await fetch(`https://swapi.dev/api/planets/${id}?format=json`);
-            let data = await res.json();
-            setPlanetDetail(data);
+        async function fetchData() {
+            const planetDetailResult = await fetchPlanetDetails(id);
+            setPlanetDetail(planetDetailResult);
             setLoading(false);
         }
-
-        fetchPeople();
+        fetchData();
     }, []);
 
     return (

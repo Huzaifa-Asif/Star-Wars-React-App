@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'
 import { useParams } from "react-router-dom";
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
+import { fetchPeopleDetails } from '../../services/RestApi';
+
 
 export default function PeopleDetail() {
     let { id } = useParams();
@@ -9,14 +11,12 @@ export default function PeopleDetail() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        async function fetchPeople() {
-            let res = await fetch(`https://swapi.dev/api/people/${id}?format=json`);
-            let data = await res.json();
-            setPeopleDetail(data);
+        async function fetchData() {
+            const peopleDetailResult = await fetchPeopleDetails(id);
+            setPeopleDetail(peopleDetailResult);
             setLoading(false);
         }
-
-        fetchPeople();
+        fetchData();
     }, []);
 
     return (

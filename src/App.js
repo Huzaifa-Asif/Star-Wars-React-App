@@ -1,9 +1,9 @@
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
-import Home  from './pages/home/Home.js'
+import Home from './pages/home/Home.js'
 import People from './pages/people/People.js';
 import PeopleDetail from './pages/people/PeopleDetail.js';
 import PlanetDetail from './pages/planet/PlanetDetail.js';
@@ -11,6 +11,7 @@ import Planet from './pages/planet/Planet.js';
 import Film from './pages/film/Film.js';
 import FilmDetail from './pages/film/FilmDetail.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { fetchPeople, fetchPlanets, fetchFilms } from './services/RestApi';
 
 function App() {
 
@@ -19,44 +20,31 @@ function App() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(true)
 
-  useEffect(() =>{
-    async function fetchPeople(){
-      let res = await fetch('https://swapi.dev/api/people/?format=json');
-      let data = await res.json();
-      setPeople(data.results);
+  useEffect(() => {
+
+    async function fetchData() {
+      const peopleResult = await fetchPeople();
+      setPeople(peopleResult);
+      const planetResult = await fetchPlanets();
+      setPlanets(planetResult);
+      const filmResult = await fetchFilms();
+      setFilms(filmResult);
       setLoading(false);
     }
+    fetchData();
 
-    async function fetchPlanets(){
-      let res = await fetch('https://swapi.dev/api/planets/?format=json');
-      let data = await res.json();
-      setPlanets(data.results);
-      setLoading(false);
-    }
-
-    async function fetchFilms(){
-      let res = await fetch('https://swapi.dev/api/films/?format=json');
-      let data = await res.json();
-      setFilms(data.results);
-      setLoading(false);
-    }
-
-    fetchPeople();
-    fetchPlanets();
-    fetchFilms();
-   
   }, [])
 
 
   return (
     <>
-       <Router>
+      <Router>
         <Navbar />
-          {loading ? (
-            <Dimmer active inverted>
-              <Loader inverted>Loading</Loader>
-            </Dimmer>
-          ):(
+        {loading ? (
+          <Dimmer active inverted>
+            <Loader inverted>Loading</Loader>
+          </Dimmer>
+        ) : (
           <Switch>
             <Route exact path='/'>
               <Home />
@@ -81,7 +69,7 @@ function App() {
             </Route>
           </Switch>
         )}
-       </Router>
+      </Router>
     </>
   );
 }
